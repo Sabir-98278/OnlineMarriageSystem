@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OnlineMarriageSystem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1c9244de6ddcbec46b620ed8c553830a25366f43")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3897e204924a85cbdc7c8449bff35474bf121d63")]
 [assembly: System.Reflection.AssemblyProductAttribute("OnlineMarriageSystem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OnlineMarriageSystem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
