@@ -36,7 +36,6 @@
 
   <ItemGroup>
     <Folder Include="Report\" />
-    <Folder Include="TestScriptUtility\" />
   </ItemGroup>
 
 </Project>

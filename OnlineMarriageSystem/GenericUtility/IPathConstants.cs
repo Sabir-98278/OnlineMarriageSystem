@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TestProject1_nunit.Framework.Framework_GenericUtility
+﻿namespace TestProject1_nunit.Framework.Framework_GenericUtility
 {
     internal interface IPathConstants
     {

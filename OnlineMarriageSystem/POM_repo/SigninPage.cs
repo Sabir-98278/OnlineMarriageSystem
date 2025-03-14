@@ -1,16 +1,11 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnlineMarriageSystem.POM_repo
 {
     class SigninPage
     {
-        SigninPage(IWebDriver driver)
+        public SigninPage(IWebDriver driver)
         {
             PageFactory.InitElements(driver, this);
         }
