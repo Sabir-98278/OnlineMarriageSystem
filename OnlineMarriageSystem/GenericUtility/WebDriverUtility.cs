@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
@@ -17,31 +16,31 @@ namespace TestProject1_nunit.Framework.Framework_GenericUtility
         {
             driver.Manage().Window.Minimize();
         }
-        public void ImplicitwaitElements(IWebDriver driver, int sec)
+        public void ImplicitwaitElements(IWebDriver driver)
         {
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(sec);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(IPathConstants.sec);
         }
-        public void ExplicitwaitElementsClickable(IWebDriver driver, By element,int sec)
+        public void ExplicitwaitElementsClickable(IWebDriver driver, By element)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(sec));
-            _ = wait.Until(ExpectedConditions.ElementToBeClickable(element));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(IPathConstants.sec));
+            wait.Until(ExpectedConditions.ElementToBeClickable(element));
         }
-        public void ExplicitwaitElementsVisible(IWebDriver driver, By element, int sec)
+        public void ExplicitwaitElementsVisible(IWebDriver driver, By element )
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(sec));
-            _ = wait.Until(ExpectedConditions.ElementIsVisible(element));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(IPathConstants.sec));
+            wait.Until(ExpectedConditions.ElementIsVisible(element));
         }
-        public void Tohandledropdown(IWebElement element, string text)
+        public void ToHandleDropdown(IWebElement element, string text)
         {
             SelectElement sel = new SelectElement(element);
             sel.SelectByText(text);
         }
-        public void Tohandledropdown(IWebElement element, int index)
+        public void ToHandleDropdown(IWebElement element, int index)
         {
             SelectElement sel = new SelectElement(element);
             sel.SelectByIndex(index);
         }
-        public void Tohandledropdown(string value, IWebElement element)
+        public void ToHandleDropdown(string value, IWebElement element)
         {
             SelectElement sel = new SelectElement(element);
             sel.SelectByValue(value);

@@ -1,5 +1,4 @@
-﻿{
-  
+﻿{ 
     "usernameadmin"
     :
     "admin",
@@ -14,8 +13,6 @@
     :
     "chrome",
 
-  "usernameuser": 1234567890
-      
- 
-  
-}
+    "usernameuser": 1234567890,
+    "module" : "admin"
+ }
