@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NUnit.Framework.Legacy;
 using OnlineMarriageSystem.GenericUtility;
 using OnlineMarriageSystem.POM_repo;
 using TestProject1_nunit.Framework.Framework_GenericUtility;
@@ -27,7 +28,7 @@ namespace OnlineMarriageSystem.TestScriptUtility
             rp.HAddTextField.SendKeys(ex.ToreadfromExcel("Husb", 2, 5));
             rp.HZipCodeTextField.SendKeys(ex.ToreadfromExcel("Husb", 2, 6));
             rp.HStateTextField.SendKeys(ex.ToreadfromExcel("Husb", 2, 7));
-            rp.HAadharTextField.SendKeys(ex.ToreadfromExcel("Husb", 2, 8));
+            rp.HAadharTextField.SendKeys(ex.ToreadfromExcel("Husb", 2, 8)+c.Randnum());
             rp.WNameTextField.SendKeys(ex.ToreadfromExcel("wife", 2, 2));
             rp.WImage.SendKeys(IPathConstants.wifImagePath);
             rp.WReligionTextField.SendKeys(ex.ToreadfromExcel("wife", 2, 3));
@@ -36,7 +37,7 @@ namespace OnlineMarriageSystem.TestScriptUtility
             rp.WAddTextField.SendKeys(ex.ToreadfromExcel("wife", 2, 5));
             rp.WZipCodeTextField.SendKeys(ex.ToreadfromExcel("wife", 2, 6));
             rp.WStateTextField.SendKeys(ex.ToreadfromExcel("wife", 2, 7));
-            rp.WAadharTextField.SendKeys(ex.ToreadfromExcel("wife", 2, 8));
+            rp.WAadharTextField.SendKeys(ex.ToreadfromExcel("wife", 2, 8)+c.Randnum());
             rp.FirstWittNameTextField.SendKeys(ex.ToreadfromExcel("wittness", 2, 1));
             rp.FisrtWittAddTextField.SendKeys(ex.ToreadfromExcel("wittness", 2, 2));
             rp.SecondWittNameTextField.SendKeys(ex.ToreadfromExcel("wittness", 2, 3));
@@ -45,7 +46,19 @@ namespace OnlineMarriageSystem.TestScriptUtility
             rp.ThirdWittAddTextField.SendKeys(ex.ToreadfromExcel("wittness", 2, 6));
             web.ScrolltoViewUsingJavaScriptExecutor(driver,rp.SubmitButton);
             rp.SubmitButton.Click();
-
+            web.TohandlePopupandAccept(driver);
+            uhp.MarraigeApplication.Click();
+            ViewMarraigeAppPageUs vms = new ViewMarraigeAppPageUs(driver);
+            string husbName = vms.Name.Text;
+            StringAssert.Contains(ex.ToreadfromExcel("Husb",2, 2), husbName);
+            string regNo = vms.RegisNo.Text;
+            uhp.SearchLink.Click();
+            SearchMarriageAppPage sma = new SearchMarriageAppPage(driver);
+            sma.SearchbyRegnotextfield.SendKeys(regNo);
+            sma.Submitbutton.Click();
+            sma.Icon.Click();
+            web.TakeScreenShot(driver);
         }
+        
     }
 }

@@ -46,7 +46,7 @@ namespace OnlineMarriageSystem.GenericUtility
             web.ImplicitwaitElements(driver);
 
             //extent report
-            string path = "C:\\Users\\ranja\\source\\repos\\OnlineMarriageSystem\\OnlineMarriageSystem\\Report\\" + "repor" + c.Randnum() + ".html";
+            string path = "C:\\Users\\HP\\Source\\Repos\\OnlineMarriageSystemNew\\OnlineMarriageSystem\\Report\\" + "repor" + c.Randnum() + ".html";
             ExtentSparkReporter htmlreporter=new ExtentSparkReporter(path);
             htmlreporter.Config.DocumentTitle = "MarraigeAppTestReport";
             htmlreporter.Config.ReportName = "TestScripReport";
@@ -56,7 +56,7 @@ namespace OnlineMarriageSystem.GenericUtility
            }
            [SetUp]
             public void LoginToAppUser()
-        {
+            {
             string userType = js.ToReadfromjson("module");
             //Console.WriteLine("enter user type");
             //string userType = Console.ReadLine();
@@ -68,6 +68,7 @@ namespace OnlineMarriageSystem.GenericUtility
             else if(userType.Equals("admin",StringComparison.OrdinalIgnoreCase)) 
             {
                 sp.LoginASADmin(js.ToReadfromjson("usernameadmin"),js.ToReadfromjson("password"));
+                
             }
             test = extent.CreateTest("Reg");
         }

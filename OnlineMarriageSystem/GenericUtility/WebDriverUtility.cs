@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.DevTools.V131.DOM;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
@@ -146,6 +147,13 @@ namespace TestProject1_nunit.Framework.Framework_GenericUtility
         {
             Actions act = new Actions(driver);
             act.SendKeys(Keys.Enter).Perform();
+        }
+        public void TakeScreenShot(IWebDriver driver) 
+        {
+            string path = "C:\\Users\\HP\\Source\\Repos\\OnlineMarriageSystemNew\\OnlineMarriageSystem\\Report\\";
+            ITakesScreenshot ts = (ITakesScreenshot)driver;
+            Screenshot screenshot = ts.GetScreenshot();
+            screenshot.SaveAsFile(path + "src" + ".png");
         }
     }
 }

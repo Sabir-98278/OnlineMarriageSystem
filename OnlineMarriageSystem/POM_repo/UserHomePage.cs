@@ -21,10 +21,10 @@ namespace OnlineMarriageSystem.POM_repo
         [FindsBy(How=How.LinkText,Using = "Search")]
         private IWebElement searchLink;
 
-        [FindsBy(How =How.XPath, Using = "//img[@src='img/images.png']")]
+        [FindsBy(How =How.XPath, Using = "//a[@href='user-profile.php']")]
         private IWebElement userIcon;
 
-        [FindsBy(How=How.XPath, Using = "href=\"logout.php\"")]
+        [FindsBy(How=How.XPath, Using = "//a[@href='logout.php']")]
         private IWebElement logoutButton;
 
         public IWebElement Header { get => header; set => header = value; }
