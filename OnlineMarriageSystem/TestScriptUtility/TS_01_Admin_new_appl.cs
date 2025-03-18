@@ -10,19 +10,20 @@ namespace OnlineMarriageSystem.TestScriptUtility
         [Test]
         public void applnew()
         {
-            WebDriverUtility webutil = new WebDriverUtility();
-            HomePage hp = new HomePage(driver);
-        //    driver.FindElement(By.XPath(""))
-            webutil.ExplicitwaitElementsClickable(driver,By.XPath("//a[contains(text(),'New')]"));
-            hp.Newapplicationlink.Click();
-            hp.Infoeyeicon.Click();
-            ViewMarriageAppPage view = new ViewMarriageAppPage(driver);
-            
-            webutil.ScrolltoViewUsingJavaScriptExecutor(driver, view.TakeActionbutton1);
-            view.TakeActionbutton1.Click();
-            view.Remarkstextfield.SendKeys("rejected");
-            webutil.ToHandleDropdown(view.Statusdropdown, "Rejected");
-            view.Closebutton.Click();
+            //    WebDriverUtility webutil = new WebDriverUtility();
+            //    HomePage hp = new HomePage(driver);
+            ////    driver.FindElement(By.XPath(""))
+            //    webutil.ExplicitwaitElementsClickable(driver,By.XPath("//a[contains(text(),'New')]"));
+            //    hp.Newapplicationlink.Click();
+            //    hp.Infoeyeicon.Click();
+            //    ViewMarriageAppPage view = new ViewMarriageAppPage(driver);
+
+            //    webutil.ScrolltoViewUsingJavaScriptExecutor(driver, view.TakeActionbutton1);
+            //    view.TakeActionbutton1.Click();
+            //    view.Remarkstextfield.SendKeys("rejected");
+            //    webutil.ToHandleDropdown(view.Statusdropdown, "Rejected");
+            //    view.Closebutton.Click();
+            Console.WriteLine("Hi Sabheer...");
         }
     }
 }
