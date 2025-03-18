@@ -13,7 +13,7 @@ namespace OnlineMarriageSystem.TestScriptUtility
     internal class UserTestScript:BaseforUser
     {
 
-        [Test]
+        [Test,Order(1)]
         public void Registration()
         {
             UserHomePage uhp=new UserHomePage(driver);
@@ -47,12 +47,27 @@ namespace OnlineMarriageSystem.TestScriptUtility
             web.ScrolltoViewUsingJavaScriptExecutor(driver,rp.SubmitButton);
             rp.SubmitButton.Click();
             web.TohandlePopupandAccept(driver);
+            
+        }
+        [Test,Order(2)]
+        public void ViewMarr() 
+        {
+            UserHomePage uhp = new UserHomePage(driver);
             uhp.MarraigeApplication.Click();
             ViewMarraigeAppPageUs vms = new ViewMarraigeAppPageUs(driver);
             string husbName = vms.Name.Text;
-            StringAssert.Contains(ex.ToreadfromExcel("Husb",2, 2), husbName);
+
+            StringAssert.Contains(ex.ToreadfromExcel("Husb", 2, 2), husbName);
+        }
+        [Test,Order(3)]
+        public void SearchByReg() 
+        {
+            UserHomePage uhp = new UserHomePage(driver);
+            uhp.MarraigeApplication.Click();
+            ViewMarraigeAppPageUs vms = new ViewMarraigeAppPageUs(driver);
             string regNo = vms.RegisNo.Text;
             uhp.SearchLink.Click();
+
             SearchMarriageAppPage sma = new SearchMarriageAppPage(driver);
             sma.SearchbyRegnotextfield.SendKeys(regNo);
             sma.Submitbutton.Click();

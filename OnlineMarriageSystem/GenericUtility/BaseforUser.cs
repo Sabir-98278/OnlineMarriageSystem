@@ -44,9 +44,11 @@ namespace OnlineMarriageSystem.GenericUtility
             web.ToMaximize(driver);
             driver.Url = js.ToReadfromjson("url");
             web.ImplicitwaitElements(driver);
+            SigninPage s = new SigninPage(driver);
+            s.UserLink.Click();
 
             //extent report
-            string path = "C:\\Users\\HP\\Source\\Repos\\OnlineMarriageSystemNew\\OnlineMarriageSystem\\Report\\" + "repor" + c.Randnum() + ".html";
+            string path = "C:\\Users\\HP\\Source\\Repos\\OnlineMarriageSystemNew\\OnlineMarriageSystem\\Report\\" + c.ForSystemDataandTime() + ".html";
             ExtentSparkReporter htmlreporter=new ExtentSparkReporter(path);
             htmlreporter.Config.DocumentTitle = "MarraigeAppTestReport";
             htmlreporter.Config.ReportName = "TestScripReport";
@@ -57,7 +59,7 @@ namespace OnlineMarriageSystem.GenericUtility
            [SetUp]
             public void LoginToAppUser()
             {
-            string userType = js.ToReadfromjson("module");
+             string userType = js.ToReadfromjson("module");
             //Console.WriteLine("enter user type");
             //string userType = Console.ReadLine();
             sp = new SigninPage(driver);

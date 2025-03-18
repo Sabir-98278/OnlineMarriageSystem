@@ -15,7 +15,7 @@ namespace OnlineMarriageSystem.POM_repo
         [FindsBy(How = How.Id, Using = "search")]
         private IWebElement submitbutton;
 
-        [FindsBy(How =How.XPath,Using = "//a[@href='view-marriage-application-detail.php?viewid=13']")]
+        [FindsBy(How =How.XPath,Using = "//tbody//a")]
         private IWebElement icon;
 
         public IWebElement SearchbyRegnotextfield { get => searchbyRegnotextfield; set => searchbyRegnotextfield = value; }

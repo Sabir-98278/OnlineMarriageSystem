@@ -26,7 +26,7 @@ namespace OnlineMarriageSystem.POM_repo
         }
         public void LoginAsUser(string usernameU, string passwordU)
         {
-            userLink.Click();
+            
             usernameTextFieldUser.SendKeys(usernameU);
             passwordtextfieldUser.SendKeys(passwordU);
             userSubmitButton.Click();
@@ -48,5 +48,6 @@ namespace OnlineMarriageSystem.POM_repo
         public IWebElement Usernametextfield { get => usernametextfieldadmin; }
         public IWebElement Passwordtextfield { get => passwordtextfieldadmin;  }
         public IWebElement Signinbutton { get => signinbuttonadmin; }
+        public IWebElement UserLink { get => userLink; set => userLink = value; }
     }
 }

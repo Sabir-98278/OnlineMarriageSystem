@@ -150,10 +150,11 @@ namespace TestProject1_nunit.Framework.Framework_GenericUtility
         }
         public void TakeScreenShot(IWebDriver driver) 
         {
+            C_Utility c=new C_Utility();
             string path = "C:\\Users\\HP\\Source\\Repos\\OnlineMarriageSystemNew\\OnlineMarriageSystem\\Report\\";
             ITakesScreenshot ts = (ITakesScreenshot)driver;
             Screenshot screenshot = ts.GetScreenshot();
-            screenshot.SaveAsFile(path + "src" + ".png");
+            screenshot.SaveAsFile(path +c.ForSystemDataandTime()+ ".png");
         }
     }
 }
